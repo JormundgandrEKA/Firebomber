@@ -46,7 +46,11 @@ The clock runs fast through quiet days and slows when anything is flying.
 
 ![The war economy](media/industry.jpg)
 
-## Running it
+## Download
+
+Windows 10 or 11, 64-bit. Get the zip from [Releases](https://github.com/JormundgandrEKA/Firebomber/releases), unzip the whole folder and run `Firebomber.exe`. Nothing needs installing, and saves stay in a `saves` folder beside it.
+
+## Running from source
 
 You need [Godot 4.7.2 .NET](https://godotengine.org/download/archive/) and the [.NET 8 SDK](https://dotnet.microsoft.com/download/dotnet/8.0).
 
@@ -57,3 +61,7 @@ dotnet build FirebomberB2.sln
 Then open `project.godot` in Godot and press Play, or run the Godot executable from this folder with `--path .`. With no arguments the game starts a new campaign.
 
 Space pauses, 1-7 set the speed, the mouse wheel zooms, and dragging or WASD pans. Click a formation, city or airfield to give orders. H opens the hangar.
+
+## License
+
+[Apache License 2.0](LICENSE).

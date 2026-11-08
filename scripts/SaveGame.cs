@@ -11,7 +11,7 @@ namespace Firebomber;
 public static class SaveGame
 {
     const string Magic = "FIREBOMBER-SAVE"; const int Version = 8;      // 8: what is broken at the fields, depots, guns and radar; raids aimed at sites;      // 7: fields' standing orders and patrols, ferries in the air;      // 6: the history behind the graphs, and raid warnings;      // 5: the UCS planner, works sizes, raids aimed at works;      // 3: the works, dumps, crews and schools; 4: war support
-    public static string Dir { get { var d = Godot.ProjectSettings.GlobalizePath("user://saves"); Directory.CreateDirectory(d); return d; } }
+    public static string Dir { get { var d = System.Environment.GetEnvironmentVariable("FIREBOMBER_SAVES") ?? Godot.ProjectSettings.GlobalizePath("user://saves"); Directory.CreateDirectory(d); return d; } }
     public static string Manual => Path.Combine(Dir, "campaign.fbsave");
     public static string Auto => Path.Combine(Dir, "autosave.fbsave");
     /// <summary>The newer of the two saves, if there is one.</summary>

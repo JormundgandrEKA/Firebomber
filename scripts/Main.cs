@@ -314,7 +314,7 @@ public partial class Main : Node2D
 
     public override void _Ready()
     {
-        TextureFilter = TextureFilterEnum.NearestWithMipmaps;
+        TextureFilter = TextureFilterEnum.NearestWithMipmaps; Callable.From(() => DisplayServer.WindowSetTitle("Firebomber")).CallDeferred();
         Sprites.Build();
         var startSw = System.Diagnostics.Stopwatch.StartNew(); World = new World(); GD.Print($"world and cities built in {startSw.ElapsedMilliseconds} ms");
         foreach (var c in World.Cities) if (c.Layout != null) GD.Print($"{c.Name,-10} like {c.Style!.Like,-26} {c.Layout.Plots.Length,7} buildings  wood {c.Layout.Plots.Count(q => q.Mat == 0),6}  brick {c.Layout.Plots.Count(q => q.Mat == 1),6}  works {c.Layout.Plots.Count(q => q.Mat == 2),5}");
